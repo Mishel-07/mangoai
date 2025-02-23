@@ -7,7 +7,6 @@ import (
 	"net/http"
 )
 
-// doRequest sends an HTTP request to the Mango API.
 func (m *Mango) doRequest(endpoint string, method string, payload map[string]interface{}) (map[string]interface{}, error) {
 	url := fmt.Sprintf("%s/%s", m.baseURL, endpoint)
 	jsonData, err := json.Marshal(payload)
@@ -29,7 +28,7 @@ func (m *Mango) doRequest(endpoint string, method string, payload map[string]int
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("Error: Report https://github.com/Mishel-07/MangoAPI/issues")
+		return nil, fmt.Errorf("Error: Report https://github.com/Mishel-07/mangoai/issues")
 	}
 
 	var result map[string]interface{}
