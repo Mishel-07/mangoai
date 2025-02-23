@@ -1,15 +1,13 @@
-package request
+package mango
 
 import (
 	"bytes"
 	"encoding/json"
 	"fmt"
 	"net/http"
-
-	"github.com/Mishel-07/mangoai/mango"
 )
 
-func (m *mango.Mango) DoRequest(endpoint string, method string, payload map[string]interface{}) (map[string]interface{}, error) {
+func (m *Mango) DoRequest(endpoint string, method string, payload map[string]interface{}) (map[string]interface{}, error) {
 	url := fmt.Sprintf("%s/%s", m.baseURL, endpoint)
 	jsonData, err := json.Marshal(payload)
 	if err != nil {
