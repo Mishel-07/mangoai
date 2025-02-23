@@ -1,7 +1,5 @@
 package mangoai
 
-import "github.com/Mishel-07/mangoai/options"
-
 type Mango struct {
         baseURL string
         Chat    *Chat
