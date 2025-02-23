@@ -4,4 +4,5 @@ const RoleUser = "user"
 
 const RoleSystem = "system"
 
-const RoleAssistant = "assistant
+const RoleAssistant = "assistant"
+
