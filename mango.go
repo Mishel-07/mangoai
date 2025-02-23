@@ -1,4 +1,4 @@
-package mango
+package mangoai
 
 type Mango struct {
 	baseURL string
