@@ -79,12 +79,12 @@ func NewChoice(json map[string]interface{}) Choice {
 	}
 }
 
-type Message struct {
+type Messages struct {
 	Role    string `json:"role"`
 	Content string `json:"content"`
 }
 
-func NewMessage(json map[string]interface{}) Message {
+func NewMessages(json map[string]interface{}) Message {
 	return Message{
 		Role:    json["role"].(string),
 		Content: json["content"].(string),
