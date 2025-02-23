@@ -2,7 +2,7 @@ package options
 
 type Mango struct {
         baseURL string
-        Chat    *Chat
+        Chat    interface{}
 }
 
 type Option func(*Mango)
