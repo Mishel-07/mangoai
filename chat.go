@@ -75,7 +75,7 @@ type Choice struct {
 
 func NewChoice(json map[string]interface{}) Choice {
 	return Choice{
-		Message: NewMessages(json["message"].(map[string]interface{})),
+		Messages: NewMessages(json["message"].(map[string]interface{})),
 	}
 }
 
@@ -84,7 +84,7 @@ type Messages struct {
 	Content string `json:"content"`
 }
 
-func NewMessages(json map[string]interface{}) Message {
+func NewMessages(json map[string]interface{}) Messages {
 	return Messages{
 		Role:    json["role"].(string),
 		Content: json["content"].(string),
