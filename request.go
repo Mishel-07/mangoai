@@ -1,4 +1,4 @@
-package mango
+package mangoai
 
 import (
 	"bytes"
