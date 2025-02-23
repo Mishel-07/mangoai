@@ -20,7 +20,7 @@ func NewMango(options ...Option) *Mango {
 	
 	for _, option := range options {
 		option(mango)
-}
+        }
 	
 	mango.Chat = &Chat{mango: mango}
 	return mango
