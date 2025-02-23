@@ -70,7 +70,7 @@ type ChatCompletion struct {
 }
 
 type Choice struct {
-	Message Message `json:"message"`
+	Messages Messages `json:"message"`
 }
 
 func NewChoice(json map[string]interface{}) Choice {
