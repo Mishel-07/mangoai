@@ -34,7 +34,7 @@ func NewChatCompletion(response map[string]interface{}) *ChatCompletion {
 	return completion
 }
 
-func (c *Completions) Create(model string, messages []Message) (*ChatCompletion, error) {
+func (c *Completions) Create(model string, messages []Messages) (*ChatCompletion, error) {
 	if model == "" {
 		return nil, errors.New("model is required, You can see model here https://mangooapi.onrender.com/models")
 	}
@@ -75,7 +75,7 @@ type Choice struct {
 
 func NewChoice(json map[string]interface{}) Choice {
 	return Choice{
-		Message: NewMessage(json["message"].(map[string]interface{})),
+		Message: NewMessages(json["message"].(map[string]interface{})),
 	}
 }
 
