@@ -4,9 +4,11 @@ import "github.com/Mishel-07/mangoai"
 
 type Option func(*mangoai.Mango)
 
-func RoleUser() Option{
-        return "user"
-}
+const RoleUser = "user"
+
+const RoleSystem = "system"
+
+const Assistant = "assistant"
 
 func WithBaseURL(url string) Option {
         return func(m *mangoai.Mango) {
