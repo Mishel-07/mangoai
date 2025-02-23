@@ -14,36 +14,30 @@ go get github.com/Mishel-07/mangoai@latest
 
 Here is a basic example of how to use mango ai:
 
-```python
+```go
 package main
 
 import (
- "fmt"
- "github.com/Mishel-07/mangoai/mango"
+    "fmt"
+    "github.com/Mishel-07/mangoai/mango"
 )
 
 func main() {
- client := mango.NewMango()
+    client := mango.NewMango()
 
- messages := []mango.Messages{
-  {
-   Role:    "user",
-   Content: "hi",
-  },
- }
-
- chatCompletion, err := client.Chat.Completions.Create("gpt-3.5-turbo", messages)
- if err != nil {
-  fmt.Println("Error:", err)
-  return
- }
-
- if len(chatCompletion.Choices) > 0 {
-  content := chatCompletion.Choices[0].Message.Content
-  fmt.Println("Response Content:", content)
- } else {
-  fmt.Println("No choices available")
- }
+    messages := []mango.Messages{           
+           Role:    "user",
+           Content: "hi",
+    },
+    chatCompletion, err := client.Chat.Completions.Create("gpt-3.5-turbo", messages)
+    if err != nil {
+            fmt.Println("Error:", err)
+            return
+    }
+    
+    content := chatCompletion.Choices[0].Message.Content
+    fmt.Println("content)
+  
 }
 ```
 
