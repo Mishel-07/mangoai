@@ -1,8 +1,11 @@
 package options
 
-import "github.com/Mishel-07/mangoai"
+type Mango struct {
+        baseURL string
+        Chat    *Chat
+}
 
-type Option func(*mangoai.Mango)
+type Option func(*Mango)
 
 const RoleUser = "user"
 
