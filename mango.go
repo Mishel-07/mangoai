@@ -1,19 +1,13 @@
 package mangoai
 
+import "github.com/Mishel-07/mangoai/options"
+
 type Mango struct {
         baseURL string
         Chat    *Chat
 }
 
-type Option func(*Mango)
-
-func WithBaseURL(url string) Option {
-        return func(m *Mango) {
-                m.baseURL = url
-        }
-}
-
-func NewMango(options ...Option) *Mango {
+func NewMango(options ...options.Option) *Mango {
         mango := &Mango{
                 baseURL: "https://mangooapi.onrender.com",
         }
@@ -22,6 +16,6 @@ func NewMango(options ...Option) *Mango {
                 option(mango)
         }
 
-        mango.Chat = NewChat(mango) 
+        mango.Chat = NewChat(mango)
         return mango
 }
