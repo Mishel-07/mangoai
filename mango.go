@@ -3,12 +3,12 @@ package mangoai
 import "github.com/Mishel-07/mangoai/options"
 
 
-func NewMango(options ...options.Option) *options.Mango {
-        mango := &Mango{
+func NewMango(ops ...options.Option) *options.Mango {
+        mango := &options.Mango{
                 baseURL: "https://mangooapi.onrender.com",
         }
 
-        for _, option := range options {
+        for _, option := range ops {
                 option(mango)
         }
 
