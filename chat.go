@@ -1,8 +1,7 @@
 package mangoai
 
-import (
-        "errors"
-)
+import "errors"
+
 
 type Chat struct {
         mango       *Mango
