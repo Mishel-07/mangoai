@@ -19,6 +19,22 @@ type Completions struct {
         chat *Chat
 }
 
+func NewChatCompletion(response map[string]interface{}) *ChatCompletion {
+	completion := &ChatCompletion{
+		Status:   response["status"].(string),
+		Object:   response["object"].(string),
+		Response: response["response"].(string),
+	}
+
+	var choices []Choice
+	for _, choice := range response["choices"].([]interface{}) {
+		choices = append(choices, NewChoice(choice.(map[string]interface{})))
+	}
+	completion.Choices = choices
+
+	return completion
+}
+
 func (c *Completions) Create(model string, messages []Message) (*ChatCompletion, error) {
 	if model == "" {
 		return nil, errors.New("model is required, You can see model here https://mangooapi.onrender.com/models")
@@ -52,22 +68,6 @@ type ChatCompletion struct {
 	Object   string    `json:"object"`
 	Response string    `json:"response"`
 	Choices  []Choice  `json:"choices"`
-}
-
-func NewChatCompletion(response map[string]interface{}) *ChatCompletion {
-	completion := &ChatCompletion{
-		Status:   response["status"].(string),
-		Object:   response["object"].(string),
-		Response: response["response"].(string),
-	}
-
-	var choices []Choice
-	for _, choice := range response["choices"].([]interface{}) {
-		choices = append(choices, NewChoice(choice.(map[string]interface{})))
-	}
-	completion.Choices = choices
-
-	return completion
 }
 
 type Choice struct {
