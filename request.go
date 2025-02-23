@@ -1,4 +1,4 @@
-package mango
+package request
 
 import (
 	"bytes"
