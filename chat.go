@@ -85,7 +85,7 @@ type Messages struct {
 }
 
 func NewMessages(json map[string]interface{}) Message {
-	return Message{
+	return Messages{
 		Role:    json["role"].(string),
 		Content: json["content"].(string),
         }
