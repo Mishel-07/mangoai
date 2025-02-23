@@ -8,7 +8,7 @@ import (
 )
 
 func (m *Mango) doRequest(endpoint string, method string, payload map[string]interface{}) (map[string]interface{}, error) {
-	url := fmt.Sprintf("%s/%s", m.baseURL, endpoint)
+	url := fmt.Sprintf("%s/%s", mango.baseURL, endpoint)
 	jsonData, err := json.Marshal(payload)
 	if err != nil {
 		return nil, err
