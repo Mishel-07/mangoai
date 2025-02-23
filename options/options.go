@@ -14,7 +14,7 @@ const RoleSystem = "system"
 const RoleAssistant = "assistant"
 
 func WithBaseURL(url string) Option {
-        return func(m *mangoai.Mango) {
+        return func(m *Mango) {
             m.baseURL = url
         }
 }
