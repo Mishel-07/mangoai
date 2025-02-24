@@ -36,7 +36,7 @@ func main() {
     }
     
     content := chatCompletion.Choices[0].Message.Content
-    fmt.Println("content)
+    fmt.Println(content)
   
 }
 ```
