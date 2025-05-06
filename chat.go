@@ -36,7 +36,7 @@ func NewChatCompletion(response map[string]interface{}) *ChatCompletion {
 
 func (c *Completions) Create(model string, messages []Messages) (*ChatCompletion, error) {
 	if model == "" {
-		return nil, errors.New("model is required, You can see model here https://mangooapi.onrender.com/models")
+		return nil, errors.New("model is required, You can see model here https://www.api.mangoi.in/v1/models")
 	}
 	if len(messages) == 0 {
 		return nil, errors.New("messages is required")
