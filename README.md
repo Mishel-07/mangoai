@@ -29,7 +29,7 @@ func main() {
            Role:    "user",
            Content: "hi",
     },
-    chatCompletion, err := client.Chat.Completions.Create("gpt-3.5-turbo", messages)
+    chatCompletion, err := client.Chat.Completions.Create("gpt-4o", messages)
     if err != nil {
             fmt.Println("Error:", err)
             return
