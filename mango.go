@@ -15,7 +15,7 @@ func WithBaseURL(url string) Option {
 
 func NewMango(options ...Option) *Mango {
         mango := &Mango{
-                baseURL: "https://mangooapi.onrender.com",
+                baseURL: "https://www.api.mangoi.in",
         }
 
         for _, option := range options{
