@@ -47,7 +47,7 @@ func (c *Completions) Create(model string, messages []Messages) (*ChatCompletion
 		"messages": messages,
 	}
 
-	response, err := c.chat.mango.DoRequest("mango", "POST", payload)
+	response, err := c.chat.mango.DoRequest("v1/chat/completions", "POST", payload)
 	if err != nil {
 		return nil, err
 	}
